@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { ArrowsAltOutlined, PlusCircleOutlined, ShrinkOutlined } from '@ant-design/icons';
 import './Graph.css';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 import CustomTooltip from '../Components/Tooltip';
 import FixedTooltip from "../Components/FixedTooltip"
 const fetchData = async () => {
@@ -28,18 +28,24 @@ const Graph = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [data, setData] = useState([]);
   const [tooltipIndex, setTooltipIndex] = useState(null);
-  const [loading, setLoading] = useState(true); 
-
+  const [loading, setLoading] = useState(true);
+  const handleMouseMove = (state) => {
+    if (state.activeTooltipIndex !== undefined) {
+      setTooltipIndex(state.activeTooltipIndex);
+    } else {
+      setTooltipIndex(null);
+    }
+  };
   useEffect(() => {
     const getData = async () => {
-      setLoading(true); 
+      setLoading(true);
       const fetchedData = await fetchData();
       setData(fetchedData);
       const timeoutId = setTimeout(() => {
-        setLoading(false); 
+        setLoading(false);
       }, 1000);
-      
-      return () => clearTimeout(timeoutId); 
+
+      return () => clearTimeout(timeoutId);
     };
     getData();
   }, []);
@@ -72,7 +78,7 @@ const Graph = () => {
 
   const renderContent = () => {
     if (loading) {
-      return <h1 className="loader">Loading...</h1>; 
+      return <h1 className="loader">Loading...</h1>;
     }
 
     switch (activeTab) {
@@ -113,10 +119,12 @@ const Graph = () => {
               </div>
             </div>
             <div className="chart-container">
-            <ResponsiveContainer width="100%" height={isFullscreen ? 480 : 380}>
+              <ResponsiveContainer width="100%" height={isFullscreen ? 480 : 380}>
                 <AreaChart
                   data={filteredData}
                   margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={() => setTooltipIndex(null)}
                 >
                   <CartesianGrid stroke="none" />
                   <XAxis dataKey="name" tick={false} />
@@ -127,6 +135,21 @@ const Graph = () => {
                     payload={filteredData[tooltipIndex] ? [{ value: filteredData[tooltipIndex].value }] : []}
                     label={filteredData[tooltipIndex]?.name || ''}
                   />
+                  {tooltipIndex !== null && filteredData[tooltipIndex] && (
+                    <>
+                      <ReferenceLine
+                        x={filteredData[tooltipIndex].name}
+                        stroke="black"
+                        strokeDasharray="3 3"
+                      />
+                      <ReferenceLine
+                        y={filteredData[tooltipIndex].value}
+                        stroke="black"
+                        strokeDasharray="3 3"
+
+                      />
+                    </>
+                  )}
                   <Area
                     type="monotone"
                     dataKey="value"
