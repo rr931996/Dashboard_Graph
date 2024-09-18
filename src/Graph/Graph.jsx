@@ -132,7 +132,7 @@ const Graph = () => {
                     dataKey="value"
                     stroke="#0808c4"
                     strokeWidth={2}
-                    fill="rgba(136, 132, 216, 0.05)"
+                    fill="rgba(136, 132, 216, 0.2)"
                   />
                 </AreaChart>
               </ResponsiveContainer>
