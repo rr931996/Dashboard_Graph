@@ -1,6 +1,7 @@
 <div align="center">
   <br />
-      ![Alt text](https://raw.githubusercontent.com/rr931996/Dashboard_Graph/master/src/assets/Graph_Component.PNG)
+      <img src="https://raw.githubusercontent.com/rr931996/Dashboard_Graph/master/src/assets/Graph_Component.PNG" alt="Graph Component" style="max-width: 100%; height: auto;">
+
   <br />
 </div>
 # Graph Component
