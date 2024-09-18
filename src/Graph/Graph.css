@@ -62,10 +62,10 @@
 }
 
 .navigation span.active {
-    color: #007bff;
+    color: #3F00FF;
     font-weight: bold;
     padding-bottom: 15px; 
-    border-bottom: 3px solid #007bff;
+    border-bottom: 3px solid #3F00FF;
 }
 
 
@@ -94,7 +94,7 @@
 }
 
 .timeframe button.active {
-    background-color: #007bff;
+    background-color: #3F00FF;
     color: #fff;
 }
 
@@ -119,8 +119,8 @@
 }
 
 .Fullscreen button:hover {
-    color: #007bff;
-    border-bottom: #007bff;
+    color: #3F00FF;
+    border-bottom: #3F00FF;
 }
 
 .icon-spacing {

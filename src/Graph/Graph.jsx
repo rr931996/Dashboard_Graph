@@ -3,7 +3,7 @@ import { ArrowsAltOutlined, PlusCircleOutlined, ShrinkOutlined } from '@ant-desi
 import './Graph.css';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import CustomTooltip from '../Components/Tooltip';
-
+import FixedTooltip from "../Components/FixedTooltip"
 const fetchData = async () => {
   try {
     const response = await fetch('https://mocki.io/v1/aeb979f3-f1a4-4995-9442-de35ce0c6612');
@@ -113,7 +113,7 @@ const Graph = () => {
               </div>
             </div>
             <div className="chart-container">
-              <ResponsiveContainer width="100%" height={isFullscreen ? '100%' : 380}>
+            <ResponsiveContainer width="100%" height={isFullscreen ? 480 : 380}>
                 <AreaChart
                   data={filteredData}
                   margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
@@ -130,11 +130,13 @@ const Graph = () => {
                   <Area
                     type="monotone"
                     dataKey="value"
-                    stroke="#8884d8"
-                    fill="rgba(136, 132, 216, 0.5)"
+                    stroke="#0808c4"
+                    strokeWidth={2}
+                    fill="rgba(136, 132, 216, 0.05)"
                   />
                 </AreaChart>
               </ResponsiveContainer>
+              <FixedTooltip data={lastDataPoint} />
             </div>
           </div>
         );
