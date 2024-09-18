@@ -26,9 +26,9 @@
 }
 
 .currency-box {
-    font-size: 2rem;  /* Smaller font size */
-    vertical-align: super; /* Raises it to appear as superscript */
-    margin-left: 5px; /* Add some space between the value and USD */
+    font-size: 2rem;  
+    vertical-align: super;
+    margin-left: 5px; 
     font-weight: normal;
     color: #777;
 }
@@ -64,7 +64,7 @@
 .navigation span.active {
     color: #007bff;
     font-weight: bold;
-    padding-bottom: 15px; /* Adjust the spacing as needed */
+    padding-bottom: 15px; 
     border-bottom: 3px solid #007bff;
 }
 
@@ -101,9 +101,9 @@
 /* Fullscreen button styles */
 .Fullscreen {
     display: flex;
-    justify-content: flex-start; /* Aligns items to the start (left side) */
-    align-items: center; /* Vertically aligns items in the center */
-    gap: 10px; /* Adds space between the buttons (adjust as needed) */
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 10px; 
 }
 
 .Fullscreen button {
