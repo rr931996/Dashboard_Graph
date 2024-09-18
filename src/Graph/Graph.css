@@ -1,0 +1,163 @@
+/* Graph.css */
+
+/* Container styles */
+.container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.container.fullscreen {
+    position: fixed;
+    margin: 10px;
+    width: 98%;
+    height: 83%;
+    background-color: #fff;
+    z-index: 9999;
+    padding: 0;
+}
+
+/* Title and subtitle styles */
+.title {
+    font-size: 3em;
+    margin: 0;
+    color: #333;
+}
+
+.currency-box {
+    font-size: 2rem;  /* Smaller font size */
+    vertical-align: super; /* Raises it to appear as superscript */
+    margin-left: 5px; /* Add some space between the value and USD */
+    font-weight: normal;
+    color: #777;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.subtitle.positive {
+    color: #4caf50;
+}
+
+.subtitle.negative {
+    color: #f44336;
+}
+
+/* Navigation styles */
+.navigation {
+    margin: 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid rgba(128, 128, 128, 0.3);
+}
+
+.navigation span {
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 1.1em;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.navigation span.active {
+    color: #007bff;
+    font-weight: bold;
+    padding-bottom: 15px; /* Adjust the spacing as needed */
+    border-bottom: 3px solid #007bff;
+}
+
+
+/* Timeframe buttons styles */
+.timeframe-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timeframe {
+    display: flex;
+}
+
+.timeframe button {
+    border: none;
+    background: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.timeframe button.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Fullscreen button styles */
+.Fullscreen {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the start (left side) */
+    align-items: center; /* Vertically aligns items in the center */
+    gap: 10px; /* Adds space between the buttons (adjust as needed) */
+}
+
+.Fullscreen button {
+    border: none;
+    background: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.Fullscreen button:hover {
+    color: #007bff;
+    border-bottom: #007bff;
+}
+
+.icon-spacing {
+    margin-right: 5px;
+}
+
+/* Chart styles */
+.chart-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-container {
+    width: 100%;
+    height: 350px;
+    margin-top: 20px;
+}
+
+.fullscreen-chart-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .timeframe-container {
+        flex-direction: column;
+    }
+
+    .timeframe {
+        margin-top: 10px;
+    }
+
+    .navigation span {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
