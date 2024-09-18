@@ -4,7 +4,9 @@
 
   <br />
 </div>
-# Graph Component
+<div>
+  <h1># Graph Component</h1>
+</div>
 
 ## Overview
 
