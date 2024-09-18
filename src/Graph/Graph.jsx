@@ -124,7 +124,7 @@ const Graph = () => {
                   data={filteredData}
                   margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
                   onMouseMove={handleMouseMove}
-                  onMouseLeave={() => setTooltipIndex(null)}
+                  onMouseLeave={() => setTooltipIndex("")}
                 >
                   <CartesianGrid stroke="none" />
                   <XAxis dataKey="name" tick={false} />

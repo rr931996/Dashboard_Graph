@@ -1,3 +1,8 @@
+<div align="center">
+  <br />
+      ![Project Banner](./src/assets/Graph_Component.png)
+  <br />
+</div>
 # Graph Component
 
 ## Overview
